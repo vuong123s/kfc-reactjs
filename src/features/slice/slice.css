@@ -1,0 +1,98 @@
+/* style slice image */
+.style-slice{
+    width: 1024px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.style-slice input{
+    display: none;
+}
+
+.style-img{
+    display: flex;
+    transition: 1s;
+    position: relative;
+    right: 0;
+}
+
+.slice img{
+    width: 1024px;
+}
+
+#radio1:checked ~ .style-img{
+    right: 0;
+}
+#radio2:checked ~ .style-img{
+    right: 100%;
+}
+#radio3:checked ~ .style-img{
+    right: 200%;
+}
+#radio4:checked ~ .style-img{
+    right: 300%;
+}
+#radio5:checked ~ .style-img{
+    right: 400%;
+}
+#radio6:checked ~ .style-img{
+    right: 500%;
+}
+#radio7:checked ~ .style-img{
+    right: 600%;
+}
+#radio8:checked ~ .style-img{
+    right: 700%;
+}
+
+
+/* style button-slice */
+
+.button-slice{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 30px;
+    
+}
+
+.manual-btn{
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    padding: 0;
+    border: 1px solid #9c0000;
+    border-radius: 100%;
+    background-color: white;
+}
+
+/* auto light button-slice */
+
+.active{
+    background: red;
+}
+
+#radio1:checked ~ .button-slice .check1{
+    background: red;
+}
+#radio2:checked ~ .button-slice .check2{
+    background: red;
+}
+#radio3:checked ~ .button-slice .check3{
+    background: red;
+}
+#radio4:checked ~ .button-slice .check4{
+    background: red;
+}
+#radio5:checked ~ .button-slice .check5{
+    background: red;
+}
+#radio6:checked ~ .button-slice .check6{
+    background: red;
+}
+#radio7:checked ~ .button-slice .check7{
+    background: red;
+}
+#radio8:checked ~ .button-slice .check8{
+    background: red;
+}
