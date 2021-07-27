@@ -7,12 +7,8 @@ import Menu from './features/menu/Menu.js'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Menu />
-      </header>
-     
+      <Menu />
     </div>
   );
 }
-
 export default App;

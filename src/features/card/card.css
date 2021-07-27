@@ -9,22 +9,22 @@
     text-align: left;
 }
 
-img{
+.card img{
     border-top-left-radius: calc(.25rem - 1px);
     border-top-right-radius: calc(.25rem - 1px);
 }
 
-h5{
+.card h5{
     font-size: 17px;
     margin: 20px 0 10px 0;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-p{
+.card p{
     margin: 0;
 }
 
-ul{
+.card ul{
     padding: 0 25px;
     margin: 0;
     color: gray;
@@ -48,11 +48,11 @@ ul{
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-li{
+.card li{
     font-size: 14px;
 }
 
-button{
+.card button{
     padding: 5px 2.5px;
 }
 
