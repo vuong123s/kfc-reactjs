@@ -7,7 +7,8 @@ import Menu from './features/menu/Menu.js'
 function App() {
   return (
     <div className="App">
-      <Menu />
+      <Card />
+      <Slice />
     </div>
   );
 }
