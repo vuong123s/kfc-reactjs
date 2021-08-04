@@ -1,85 +1,96 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 
-.bar-style{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.bar-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* menu */
 
-.menu{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    font-family: 'Roboto', sans-serif;
+.menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
 }
 
 .menu-content {
-    color: black;
-    display: flex;
-    font-size: 15px;
-    margin: 0;
-    padding: 0;
-    
+  color: black;
+  display: flex;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
 }
 
-.menu-content a{
-    text-decoration: none;
+.menu-content a {
+  text-decoration: none;
 }
 
 .list-style {
-    padding: 15px 30px;
-    margin: 0 1px;
-    color: black;
-    text-decoration: none;
+  padding: 15px 30px;
+  margin: 0 1px;
+  color: black;
+  text-decoration: none;
 }
 
-.list-style:hover{
-    color: white;
-    background: black;
+.list-style:hover {
+  color: white;
+  background: black;
 }
 
 /* active */
 
-.active{
-    background-color: black;
+.active {
+  background-color: black;
 }
 
 .active div {
-    color: white;
+  color: white;
 }
 /* cart style */
 
-.cart-icon-style{
-    color: grey;
+.cart-icon-style {
+  color: grey;
 }
 
-.cart-style{
-    padding: 15px 30px 13px;
+.cart-style {
+  padding: 15px 30px 13px;
 }
 
-.login-style{
-    padding-left: 15px;
-    font-size: 12px;
-    position: relative;
-    bottom: 3px;
-}
-
-.login-style a{
-    color: red;
-    text-decoration: none;
+.login-style {
+  padding-left: 15px;
+  font-size: 12px;
+  position: relative;
+  color: red;
 }
 
 /* scroll style */
 
-.isScroll{
-    position: fixed;
-    top: 0;
-    z-index: 3;
-    background-color: white;
+.isScroll {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  background-color: white;
 }
 
-body{ 
-    height: 2000px;
+body {
+  height: 2000px;
+}
+
+.style-img-bar-logo {
+  padding-bottom: 10px;
+}
+
+/* icon */
+
+.cancel-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 15px;
+  margin-top: 10px;
+  font-size: 33px;
 }

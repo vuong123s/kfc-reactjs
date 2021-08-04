@@ -1,92 +1,100 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap');
-.card{
-    display: flex;
-    flex-direction: column;
-    width: 225px;
-    background-color: white;
-    padding: 10px 15px 30px;
-    color: black;
-    text-align: left;
+.card-style {
+  display: flex;
+  flex-direction: column;
+  width: 225px;
+  background-color: white;
+  color: black;
+  text-align: left;
+  box-shadow: 0px 9px 18px 0px rgb(0 0 0 / 8%);
 }
 
-.card img{
-    border-top-left-radius: calc(.25rem - 1px);
-    border-top-right-radius: calc(.25rem - 1px);
+.cards {
+  padding: 10px 15px 30px;
 }
 
-.card h5{
-    font-size: 17px;
-    margin: 20px 0 10px 0;
-    font-family: 'Source Sans Pro', sans-serif;
+.bottom-card {
+  padding: 10px 15px 30px;
 }
 
-.card p{
-    margin: 0;
+.card-style img {
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
 }
 
-.card ul{
-    padding: 0 25px;
-    margin: 0;
-    color: gray;
-    width: 190px;
-    overflow: hidden;
+.card-style h5 {
+  font-size: 17px;
+  margin: 20px 0 10px 0;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
-.show-text{
-    height: 60px;
-    min-height: 60px;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
+.card-style p {
+  margin: 0;
 }
 
-.show-list{
-    height: 133px;
+.card-style ul {
+  padding: 0 25px;
+  margin: 0;
+  color: gray;
+  width: 190px;
+  overflow: hidden;
 }
 
-.price{
-    font-size: 22px;
-    font-family: 'Source Sans Pro', sans-serif;
+.show-text {
+  height: 60px;
+  min-height: 60px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
 
-.card li{
-    font-size: 14px;
+.show-list {
+  height: 133px;
 }
 
-.card button{
-    padding: 5px 2.5px;
+.price {
+  font-size: 22px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
-.all-button{
-    font-size: 15px;
-    display: flex;
-    justify-content: center;
+.card-style li {
+  font-size: 14px;
 }
 
-.button{
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 7px 17px;
-    margin: 20px 10px 0 5px;
-    font-family: 'Source Sans Pro', sans-serif;
+.card-style button {
+  padding: 5px 2.5px;
 }
 
-.red{
-    border-color: #e61038;
-    background-color: #e61038;
-    color: white;
+.all-button {
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
 }
 
-.img{
-    display: flex;
-    justify-content: center;
+.button {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 7px 17px;
+  margin: 20px 10px 0 5px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.red {
+  border-color: #e61038;
+  background-color: #e61038;
+  color: white;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
 }
 
 .img img {
-    width: 15px;
-    transition: transform 0.5s;
-    margin: 10px 0 0;
+  width: 15px;
+  transition: transform 0.5s;
+  margin: 10px 0 0;
 }
 
-.rotate img{
-    transform: rotate(-180deg);
+.rotate img {
+  transform: rotate(-180deg);
 }
