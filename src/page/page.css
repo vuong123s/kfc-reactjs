@@ -5,8 +5,9 @@
 }
 
 .product-item {
-  display: flex;
   justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
 }
 
 .type-menu {
@@ -14,12 +15,13 @@
   font-size: 30px;
 }
 
-.page-style {
-  width: 1024px;
-  margin: auto;
-  max-width: 1024px;
+.bigorder_app {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.page {
-  background-image: '../background.png';
+.bigorder_app img {
+  width: 500px;
+  padding: 0 15px 20px;
 }

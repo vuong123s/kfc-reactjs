@@ -1,0 +1,145 @@
+.body {
+  padding: 30px 0;
+  display: flex;
+}
+
+.left {
+  text-align: left;
+  flex-grow: 2;
+}
+
+.l-title {
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: rgb(0, 0, 0);
+}
+
+.l-note {
+  width: 100%;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: rgb(245, 245, 245);
+
+  padding: 10px 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.l-choose-t {
+  padding: 0 20px 15px 0;
+}
+
+.l-choose-b {
+  display: flex;
+}
+
+.radio {
+  margin: 10px;
+  color: gray;
+}
+
+.radio input {
+  margin-right: 5px;
+}
+
+.drink {
+  margin: 10px;
+  padding-bottom: 20px;
+  border-radius: 7px;
+  box-shadow: 0px 9px 18px 0px rgb(0 0 0 / 8%);
+}
+
+.drink img {
+  height: 130px;
+  border-radius: 7px 7px 0 0;
+}
+
+.drink p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 10px 0;
+}
+
+.addOns-title h3 {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.add-on {
+  display: flex;
+  width: 520px;
+  padding: 15px 20px;
+  font-weight: bold;
+  box-shadow: 0px 0px 18px 0px rgb(0 0 0 / 6%);
+  margin: 0 0 30px 0;
+}
+
+.add-on img {
+  height: 120px;
+  width: 200px;
+  border-radius: 7px;
+  margin: 0 10px 0 0;
+}
+
+.addOnText {
+  width: 100%;
+}
+
+.text {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.text h6 {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 18px;
+  min-height: 70px;
+}
+
+.plus {
+  margin: 0 5px 3px 0;
+}
+.minus {
+  margin: 0 0 3px 5px;
+}
+
+.num-bought {
+  font-size: 30px;
+  vertical-align: bottom;
+}
+
+.right {
+  text-align: left;
+  flex-grow: 2;
+}
+
+.selec {
+  color: gray;
+}
+
+.bill h3 {
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.total {
+  display: flex;
+  font-size: 21px;
+  justify-content: space-between;
+  border-top: 1px solid black;
+}
+
+.quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgb(185, 185, 185);
+}
+
+.quantity p {
+  margin: 0;
+}

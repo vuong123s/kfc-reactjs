@@ -1,0 +1,32 @@
+.btn-cart {
+  width: 350px;
+  height: 50px;
+  background-color: #e4002b;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.noItem {
+  font-size: 18px;
+  color: gray;
+  padding: 20px 0;
+}
+
+.noItem p {
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  text-align: left;
+  font-size: 25px;
+  font-weight: bold;
+  color: #e4002b;
+  border-bottom: 1px solid black;
+  margin: 40px 0 0 50px;
+  padding-bottom: 10px;
+}
+
+.title p {
+  margin: 0;
+}

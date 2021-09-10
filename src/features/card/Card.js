@@ -1,10 +1,12 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import './card.css';
 import A from './a.png';
 import classNames from 'classnames';
+import { MyContext } from '../context/Context.js';
+import { Link } from 'react-router-dom';
 
 function Card(props) {
-  const { name, price, text } = props;
+  const { name, price, text, id } = props;
   const [check, setCheck] = useState(false);
   let b = false;
   const [a, setA] = useState({
@@ -17,6 +19,16 @@ function Card(props) {
       height: check === true ? '1px' : `${getHeight.current.clientHeight}px`,
     });
   };
+  const value = useContext(MyContext);
+  const { cart, setCart } = value;
+
+  const addCart = () => {
+    const addItem = [...cart, props];
+    setCart(addItem);
+  };
+
+  const pathname = window.location.pathname;
+
   return (
     <div className="cards">
       <div className="card-style">
@@ -48,8 +60,12 @@ function Card(props) {
             <img src={A} />
           </div>
           <div className="all-button">
-            <div className="button">CUSTOMIZE</div>
-            <div className="button red">ORDER</div>
+            <Link to={`${pathname}/${id}`} className="button">
+              CUSTOMIZE
+            </Link>
+            <div onClick={addCart} className="button red">
+              ORDER
+            </div>
           </div>
         </div>
       </div>

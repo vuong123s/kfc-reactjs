@@ -76,6 +76,8 @@
   padding: 7px 17px;
   margin: 20px 10px 0 5px;
   font-family: 'Source Sans Pro', sans-serif;
+  color: black;
+  text-decoration: none;
 }
 
 .red {

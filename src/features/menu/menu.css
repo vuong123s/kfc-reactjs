@@ -13,6 +13,7 @@
   display: flex;
   justify-content: center;
   font-family: 'Roboto', sans-serif;
+  background-color: #f8f8f8;
 }
 
 .menu-content {
@@ -52,6 +53,7 @@
 
 .cart-icon-style {
   color: grey;
+  font-size: 23px;
 }
 
 .cart-style {
@@ -76,10 +78,6 @@
   background-color: white;
 }
 
-body {
-  height: 2000px;
-}
-
 .style-img-bar-logo {
   padding-bottom: 10px;
 }
@@ -93,4 +91,36 @@ body {
   margin-right: 15px;
   margin-top: 10px;
   font-size: 33px;
+}
+
+/* Login Bar */
+
+.login-bar {
+  width: 80px;
+  height: 30px;
+  position: absolute;
+  list-style: none;
+  background-color: white;
+  font-size: 13px;
+  padding: 3px 7px;
+  margin: 5px 0;
+  text-align: left;
+  z-index: 1;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+
+.cart {
+  position: relative;
+}
+
+.itemCart {
+  position: absolute;
+  font-size: 10px;
+  color: white;
+  top: 0;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  margin: 1px 0 0 3px;
 }
