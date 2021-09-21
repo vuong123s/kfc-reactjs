@@ -5,19 +5,34 @@ import { useRouteMatch } from 'react-router';
 import Drink from './drink.png';
 import { BiPlusCircle, BiMinusCircle } from 'react-icons/bi';
 import { Button } from 'react-bootstrap';
+import ErrPage from '../errPage/ErrPage';
+import { Link } from 'react-router-dom';
 
 export default function ItemPage() {
   const match = useRouteMatch();
   const value = useContext(MyContext);
-  const { products, setCart, cart } = value;
+  const { products, addToCart } = value;
 
   const { itemPage, id } = match.params;
-  let dataItem = products[itemPage.split('-').join('')][id - 1];
+  let dataItem;
+  if (
+    products[itemPage.split('-').join('')] === undefined ||
+    isNaN(Number(id)) === true
+  ) {
+    dataItem = 0;
+  } else {
+    dataItem = products[itemPage.split('-').join('')][id - 1];
+  }
   const [total, setTotal] = useState(1);
   const [num, setNum] = useState(0);
   const [numItem, setNumItem] = useState(0);
-  const [food, setFood] = useState('2 Miếng Gà Giòn Cay ');
-  const [drink, setDrink] = useState('Pepsi Lon');
+  const [text, setText] = useState(
+    dataItem !== 0
+      ? dataItem.text.map((x) => {
+          return x.split(' / ')[0];
+        })
+      : []
+  );
 
   const plus = () => {
     setNum(num + 1);
@@ -39,71 +54,81 @@ export default function ItemPage() {
   };
 
   useEffect(() => {
-    document.querySelectorAll('#d0').forEach((x) => {
-      if (x.value === food) x.checked = true;
-    });
-    document.querySelectorAll('#drink1').forEach((x) => {
-      if (x.value === drink) x.checked = true;
+    text.forEach((e, i) => {
+      document.getElementById(`${i}0`).checked = true;
     });
   }, []);
+
+  if (dataItem === 0) return <ErrPage></ErrPage>;
 
   return (
     <div className="body">
       <div className="left">
-        <h3 className="l-title">{dataItem.name}</h3>
-        <p className="l-note">Moi chon 1 trong {} mon duoi day</p>
-        <div className="l-choose-t">
-          {dataItem.text[0].split('/').map((item, i) => {
+        <div className="itemPageContent">
+          <h3 className="l-title">{dataItem.name}</h3>
+          {dataItem.text.map((x, index) => {
             return (
-              <div className="radio">
-                <input
-                  type="radio"
-                  onClick={(e) => {
-                    setFood(e.target.value);
-                  }}
-                  id={`d${i}`}
-                  name="fav_language"
-                  value={item}
-                />
-                 <label for={`d${i}`}>{item}</label>
-              </div>
+              <>
+                <p className="l-note">
+                  Moi chon 1 trong {x.split(' / ').length} mon duoi day
+                </p>
+                {index === dataItem.text.length - 1 && (
+                  <div className="l-choose-b">
+                    {x.split(' / ').map((item, i) => {
+                      return (
+                        <div className="drink">
+                          <img src={Drink} />
+                          <p>{item}</p>
+                          <div className="radio">
+                            <input
+                              onClick={(e) => {
+                                let a = [...text];
+                                a.splice(index, 1, e.target.value);
+                                setText(a);
+                              }}
+                              type="radio"
+                              id={`${index}${i}`}
+                              value={item}
+                              name={`${index}`}
+                            />
+                             
+                            <label id={`${index}${i}`} for={`${index}${i}`}>
+                              Có sẵn
+                            </label>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+                {index < dataItem.text.length - 1 && (
+                  <div className="l-choose-t">
+                    {x.split(' / ').map((item, i) => {
+                      return (
+                        <div className="radio">
+                          <input
+                            type="radio"
+                            onClick={(e) => {
+                              let a = [...text];
+                              a.splice(index, 1, e.target.value);
+                              setText(a);
+                            }}
+                            id={`${index}${i}`}
+                            name={`${index}`}
+                            value={item}
+                          />
+                           
+                          <label id={`${index}${i}`} for={`${index}${i}`}>
+                            {item}
+                          </label>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </>
             );
           })}
-        </div>
-        <p className="l-note">Đổi size tráng miệng - thức uống</p>
-        <div className="l-choose-b">
-          <div className="drink">
-            <img src={Drink} />
-            <p>Pepsi Lon</p>
-            <div className="radio">
-              <input
-                onClick={(e) => {
-                  setDrink(e.target.value);
-                }}
-                type="radio"
-                id="drink1"
-                value="Pepsi Lon"
-                name="drink"
-              />
-               <label for="drink1">Có sẵn</label>
-            </div>
-          </div>
-          <div className="drink">
-            <img src={Drink} />
-            <p>Hộp Milo</p>
-            <div className="radio">
-              <input
-                onClick={(e) => {
-                  setDrink(e.target.value);
-                }}
-                type="radio"
-                id="drink2"
-                value="Hộp Milo"
-                name="drink"
-              />
-               <label for="drink2">+2000đ</label>
-            </div>
-          </div>
         </div>
         <div className="addOns-title">
           <h3>Add-Ons</h3>
@@ -115,9 +140,9 @@ export default function ItemPage() {
                 <p>25.000đ</p>
               </div>
               <div className="num-bought">
-                <BiPlusCircle onClick={pluses} className="plus" />
+                <BiPlusCircle onClick={pluses} className="space" />
                 {numItem}
-                <BiMinusCircle onClick={minuses} className="minus" />
+                <BiMinusCircle onClick={minuses} className="space" />
               </div>
             </div>
           </div>
@@ -130,9 +155,9 @@ export default function ItemPage() {
               </div>
 
               <div className="num-bought">
-                <BiPlusCircle onClick={plus} className="plus" />
+                <BiPlusCircle onClick={plus} className="space" />
                 {num}
-                <BiMinusCircle onClick={minus} className="minus" />
+                <BiMinusCircle onClick={minus} className="space" />
               </div>
             </div>
           </div>
@@ -144,14 +169,15 @@ export default function ItemPage() {
             {total}x {dataItem.name}
           </h3>
           <ul className="selec">
-            <li>{food}</li>
-            <li>{drink}</li>
+            {text.map((x) => {
+              return <li>{x}</li>;
+            })}
           </ul>
           <div className="quantity">
             <div className="quan">
-              <BiPlusCircle onClick={plusTotal} className="plus" />
+              <BiPlusCircle className="space" onClick={plusTotal} />
               {total}
-              <BiMinusCircle onClick={minusTotal} className="minus" />
+              <BiMinusCircle className="space" onClick={minusTotal} />
             </div>
             <p>{dataItem.price * total}</p>
           </div>
@@ -170,7 +196,7 @@ export default function ItemPage() {
             </div>
           )}
           <div className="total">
-            <p>Tổng tiền</p>
+            <p>Tổng tiền:</p>
             <p>{dataItem.price * total + numItem * 25000 + num * 50000}</p>
           </div>
           <Button
@@ -179,7 +205,7 @@ export default function ItemPage() {
                 {
                   name: dataItem.name,
                   price: dataItem.price,
-                  text: [food, drink],
+                  text: text,
                   quantity: total,
                 },
               ];
@@ -195,16 +221,18 @@ export default function ItemPage() {
                   price: 50000,
                   quantity: numItem,
                 });
-              setCart([...cart, ...pushItem]);
+              addToCart(pushItem);
             }}
             variant="danger"
             className="total-btn"
           >
             Thêm vào giỏ hàng
           </Button>
-          <Button variant="outline-dark" className="total-btn">
-            Quay lại thực đơn
-          </Button>
+          <Link to="/">
+            <Button variant="outline-dark" className="total-btn">
+              Quay lại thực đơn
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,3 +1,16 @@
+.component {
+}
+
+.info-cart {
+  margin: 0px 30px;
+  display: flex;
+}
+
+.bill-cart {
+  flex-grow: 1;
+  padding: 20px 30px;
+}
+
 .btn-cart {
   width: 350px;
   height: 50px;
@@ -17,16 +30,119 @@
   margin: 0;
 }
 
-.title {
+.list-item {
+  flex-grow: 10;
+}
+
+.item {
+  -webkit-box-shadow: 0px 4px 20px 0px rgb(0 0 0 / 8%);
+  -moz-box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.075);
+  box-shadow: 0px 4px 20px 0px rgb(0 0 0 / 8%);
+  border-radius: 0.3333333333333333em;
+  overflow: hidden;
+  padding: 36px;
+  margin-bottom: 36px;
+  position: relative;
+}
+
+.no-title {
   text-align: left;
   font-size: 25px;
   font-weight: bold;
   color: #e4002b;
   border-bottom: 1px solid black;
-  margin: 40px 0 0 50px;
   padding-bottom: 10px;
+  padding: 20px 10px 5px 10px;
 }
 
-.title p {
+.hv-title {
+  font-size: 40px;
+  font-weight: bold;
+  padding: 15px 0;
+  margin: 10px 0;
+}
+
+.t-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+  text-align: left;
+}
+
+.l-item h3 {
+  font-family: 'Asap Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.r-item {
+  font-size: 20px;
+  color: gray;
+}
+
+.r-close {
+  font-size: 24px;
+  margin-left: 10px;
+}
+
+.b-item {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.total-btn {
+  text-transform: uppercase;
+  font-weight: 1000;
+}
+
+.total-btn:hover a {
+  color: white;
+}
+
+.cal {
+  display: flex;
+  align-items: center;
+}
+
+.t-bill {
+  display: flex;
+  text-transform: uppercase;
+  font-size: 23px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.t-bill h3 {
+  font-size: 23px;
+  font-weight: 700;
+  font-family: 'Asap Condensed', sans-serif;
   margin: 0;
+}
+
+.t-bill p {
+  color: #e4002b;
+  margin: 0;
+  font-weight: 700;
+}
+
+.t-bill small {
+  font-size: 0.75em;
+  text-transform: lowercase;
+}
+
+@media (max-width: 1000px) {
+  .info-cart {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 650px) {
+  .noItem img {
+    width: 100%;
+  }
 }

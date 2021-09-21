@@ -1,9 +1,11 @@
 .App {
   text-align: center;
   font-family: 'Asap Condensed', sans-serif;
-
   width: 1024px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .App-logo {
@@ -14,6 +16,12 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@media (max-width: 1024px) {
+  .App {
+    width: 100%;
   }
 }
 
@@ -42,4 +50,19 @@
 
 .product-item {
   display: flex;
+}
+
+.iconUp {
+  position: fixed;
+  color: red;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  font-size: 40px;
+  right: 0;
+  bottom: 0;
+}
+
+.up {
+  margin: 20px 25px;
 }

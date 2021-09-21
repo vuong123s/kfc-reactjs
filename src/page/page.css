@@ -25,3 +25,16 @@
   width: 500px;
   padding: 0 15px 20px;
 }
+
+@media (max-width: 960px) {
+  .product-item {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .bigorder_app img {
+    width: 50%;
+    padding: 0 15px 20px;
+  }
+}

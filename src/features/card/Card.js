@@ -20,12 +20,7 @@ function Card(props) {
     });
   };
   const value = useContext(MyContext);
-  const { cart, setCart } = value;
-
-  const addCart = () => {
-    const addItem = [...cart, props];
-    setCart(addItem);
-  };
+  const { addToCart, setIsAdded, setData } = value;
 
   const pathname = window.location.pathname;
 
@@ -34,9 +29,7 @@ function Card(props) {
       <div className="card-style">
         <img src="https://kfcvietnam.com.vn/uploads/combo/b09860e31866521c22705711916cc402.jpg" />
         <div className="bottom-card">
-          <h5>
-            <span>{name}</span>
-          </h5>
+          <h5>{name}</h5>
           <p>
             <span className="price">
               {price}
@@ -63,7 +56,27 @@ function Card(props) {
             <Link to={`${pathname}/${id}`} className="button">
               CUSTOMIZE
             </Link>
-            <div onClick={addCart} className="button red">
+            <div
+              onClick={() => {
+                addToCart([
+                  {
+                    name,
+                    price,
+                    text: text.map((x) => {
+                      return x.split(' / ')[0];
+                    }),
+                    quantity: 1,
+                    id,
+                  },
+                ]);
+                setIsAdded(true);
+                setTimeout(() => {
+                  setIsAdded(false);
+                }, 4000);
+                setData(props);
+              }}
+              className="button red"
+            >
               ORDER
             </div>
           </div>

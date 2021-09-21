@@ -1,0 +1,75 @@
+.addedCart {
+  width: 100%;
+  max-width: 375px;
+  padding: 15px;
+  background: #fff;
+  box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 30%);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  color: #000;
+  font-weight: bold !important;
+  font-family: 'Asap Condensed', sans-serif;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  20% {
+    top: 52px;
+    opacity: 1;
+  }
+  50% {
+    top: 52px;
+    opacity: 1;
+  }
+  80% {
+    top: 52px;
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+.body-aC {
+  position: relative;
+}
+
+.body-aC h3 {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.b-addedCart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  padding: 10px 0;
+}
+
+.b-addedCart p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.i-addedCart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 30px;
+}
+
+.btn-aC {
+  text-transform: uppercase;
+  font-weight: 600;
+}

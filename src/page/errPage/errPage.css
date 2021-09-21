@@ -1,0 +1,27 @@
+.errP {
+  margin-top: 70px;
+}
+.errP h2 {
+  font-weight: bold;
+  color: red;
+}
+
+.errP button {
+  width: 30%;
+  background: red;
+  border-color: red;
+}
+
+.errP button a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .errP-img {
+    width: 100%;
+  }
+}

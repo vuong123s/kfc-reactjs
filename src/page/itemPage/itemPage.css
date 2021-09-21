@@ -3,9 +3,16 @@
   display: flex;
 }
 
+.itemPageContent {
+  box-shadow: 0px 0px 18px 0px rgb(0 0 0 / 6%);
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0 15px;
+}
+
 .left {
   text-align: left;
-  flex-grow: 2;
+  flex-grow: 10;
 }
 
 .l-title {
@@ -61,10 +68,14 @@
   font-size: 18px;
   padding: 10px 10px 0;
 }
+.addOns-title {
+  padding: 0 20px;
+}
 
 .addOns-title h3 {
   font-weight: bold;
   font-size: 30px;
+  margin: 0 10px;
 }
 
 .add-on {
@@ -100,16 +111,14 @@
   min-height: 70px;
 }
 
-.plus {
-  margin: 0 5px 3px 0;
-}
-.minus {
-  margin: 0 0 3px 5px;
+.space {
+  margin: 0 5px;
 }
 
 .num-bought {
   font-size: 30px;
-  vertical-align: bottom;
+  display: flex;
+  align-items: center;
 }
 
 .right {
@@ -128,9 +137,11 @@
 
 .total {
   display: flex;
-  font-size: 21px;
+  font-size: 25px;
   justify-content: space-between;
   border-top: 1px solid black;
+  padding: 20px 10px 0;
+  font-weight: 700;
 }
 
 .quantity {
@@ -138,8 +149,28 @@
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid rgb(185, 185, 185);
+  font-size: 19px;
+  font-weight: bold;
+  padding: 20px 10px;
 }
 
 .quantity p {
   margin: 0;
+}
+
+.quan {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 800px) {
+  .body {
+    flex-direction: column;
+  }
+  .bill {
+    padding: 30px 30px;
+  }
+  .add-on {
+    width: 100%;
+  }
 }

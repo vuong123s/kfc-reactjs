@@ -8,11 +8,12 @@ function Context(props) {
   const { products } = props;
   const [display, setDisplay] = useState(false);
   const [isLogined, setIsLogined] = useState(false);
+  const [isAdded, setIsAdded] = useState(false);
   const [verification, setVerification] = useState('');
   const [checkLogin, setCheckLogin] = useState('');
   const [cart, setCart] = useState([]);
   const [count, setCount] = useState(1);
-
+  const [data, setData] = useState({});
   const isDisplay = () => {
     setDisplay(!display);
   };
@@ -75,6 +76,26 @@ function Context(props) {
   const listItem = (i) => {
     setCount(i);
   };
+  const addToCart = (items) => {
+    let pushCart = [];
+    for (let item of items) {
+      const a = cart.map((x) => {
+        if (
+          (x.name === item.name) &
+          (JSON.stringify(x.text) === JSON.stringify(item.text))
+        )
+          return (x.quantity = x.quantity + item.quantity);
+      });
+      const b = cart.filter((x) => {
+        return (
+          (x.name === item.name) &
+          (JSON.stringify(x.text) === JSON.stringify(item.text))
+        );
+      });
+      if (b.length === 0) pushCart.push(item);
+    }
+    if (pushCart.length > 0) setCart([...cart, ...pushCart]);
+  };
   return (
     <MyContext.Provider
       value={{
@@ -92,6 +113,11 @@ function Context(props) {
         products,
         listItem,
         count,
+        addToCart,
+        isAdded,
+        setIsAdded,
+        data,
+        setData,
       }}
     >
       {props.children}

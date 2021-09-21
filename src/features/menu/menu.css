@@ -10,10 +10,17 @@
 
 .menu {
   width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  background-color: #f8f8f8;
+}
+
+.menu-contain {
+  position: relative;
   display: flex;
   justify-content: center;
-  font-family: 'Roboto', sans-serif;
-  background-color: #f8f8f8;
+  width: max-content;
+  margin: auto;
 }
 
 .menu-content {
@@ -123,4 +130,66 @@
   left: 0;
   right: 0;
   margin: 1px 0 0 3px;
+}
+
+.bar-logo-icon {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .bar {
+    height: 82px;
+  }
+  .bar-logo-icon {
+    display: inline;
+    font-size: 30px;
+  }
+  .style-img-bar-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 30px 5px 30px;
+  }
+
+  .menu-contain {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    justify-content: flex-start;
+    flex-direction: column;
+    display: none;
+    background-color: white;
+  }
+
+  .bar-style {
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: flex-start;
+    z-index: 3;
+  }
+
+  .cart-style {
+    text-align: left;
+  }
+
+  .itemCart {
+    text-align: center;
+  }
+
+  .isScroll {
+    position: relative;
+  }
+
+  .menu-content {
+    flex-direction: column;
+    text-align: left;
+  }
+  .list-style {
+    margin: 0;
+  }
 }
