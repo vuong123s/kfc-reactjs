@@ -8,6 +8,7 @@ import Img from './image/logo_pc.png';
 import classNames from 'classnames';
 import { MyContext } from '../context/Context.js';
 import AddedCart from '../addedCart/AddedCart';
+import styled from 'styled-components';
 
 function Menu(props) {
   const value = useContext(MyContext);
@@ -25,12 +26,21 @@ function Menu(props) {
   useEffect(() => {
     setStyle(true);
   }, [pathname]);
+
+  const BarStyle = styled.div`
+    @media (max-width: 800px) {
+      height: ${style === true ? '82px' : '100%'};
+    } ;
+  `;
+
+  const MenuContain = styled.div`
+    @media (max-width: 800px) {
+      display: ${style === true ? 'none' : 'flex'};
+    } ;
+  `;
   return (
     <div className="bar">
-      <div
-        className="bar-style"
-        style={{ height: style === true ? '82px' : '100%' }}
-      >
+      <BarStyle className="bar-style" media={{}}>
         <div className="bar-logo">
           <div className="style-img-bar-logo">
             <img src={Img} />
@@ -41,10 +51,7 @@ function Menu(props) {
           </div>
         </div>
         <div className={classNames('menu', { isScroll: scroll })}>
-          <div
-            className="menu-contain"
-            style={{ display: style === true ? 'none' : 'block' }}
-          >
+          <MenuContain className="menu-contain">
             <AddedCart />
             <div className="menu-content">
               <NavLink onClick={() => listItem(1)} to="/combo-1-nguoi">
@@ -90,9 +97,9 @@ function Menu(props) {
                 </>
               )}
             </div>
-          </div>
+          </MenuContain>
         </div>
-      </div>
+      </BarStyle>
     </div>
   );
 }
