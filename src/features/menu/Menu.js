@@ -30,14 +30,15 @@ function Menu(props) {
   const BarStyle = styled.div`
     @media (max-width: 800px) {
       height: ${style === true ? '82px' : '100%'};
-    } ;
+    }
   `;
 
   const MenuContain = styled.div`
     @media (max-width: 800px) {
       display: ${style === true ? 'none' : 'flex'};
-    } ;
+    }
   `;
+
   return (
     <div className="bar">
       <BarStyle className="bar-style" media={{}}>

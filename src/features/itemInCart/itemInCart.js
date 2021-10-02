@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import './itemInCart.css';
 import { MyContent, MyContext } from '../context/Context';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Img from './1.png';
 import { Button } from 'react-bootstrap';
 import { FaPen } from 'react-icons/fa';
@@ -10,8 +10,13 @@ import { BiPlusCircle, BiMinusCircle } from 'react-icons/bi';
 
 export default function ItemInCart() {
   const value = useContext(MyContext);
-  const { cart, setCart } = value;
+  const { cart, setCart, setDisplay } = value;
   let [quan, setQuan] = useState(1);
+  let history = useHistory();
+  const checkLog = () => {
+    if (localStorage.getItem('user') !== null) return history.push('/checkout');
+    return setDisplay(true);
+  };
 
   return (
     <div className="component">
@@ -36,7 +41,12 @@ export default function ItemInCart() {
                             </ul>
                           </div>
                           <div className="r-item">
-                            <FaPen />
+                            <Link
+                              to={`/${x.id}`}
+                              onClick={() => console.log(x)}
+                            >
+                              <FaPen className="gray" />
+                            </Link>
                             <IoMdCloseCircle
                               onClick={() => {
                                 let deleteList = [...cart];
@@ -91,9 +101,11 @@ export default function ItemInCart() {
                 </p>
               </div>
               <div className="b-bill">
-                <Button variant="danger" className="total-btn">
-                  Thanh toan
-                </Button>
+                <Link onClick={checkLog}>
+                  <Button variant="danger" className="total-btn">
+                    Thanh toan
+                  </Button>
+                </Link>
                 <Link to="/">
                   <Button variant="outline-dark" className="total-btn">
                     Quay lại thực đơn

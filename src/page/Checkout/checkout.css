@@ -1,0 +1,56 @@
+.checkout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Asap Condensed', sans-serif;
+}
+
+.checkout h1 {
+  font-weight: 700;
+  font-size: 37px;
+}
+
+.form {
+  width: 60%;
+  text-align: left;
+  padding: 35px;
+  -webkit-box-shadow: 0px 3px 18px 0px rgb(0 0 0 / 8%);
+  -moz-box-shadow: 0px 3px 18px 0px rgba(0, 0, 0, 0.075);
+  box-shadow: 0px 3px 18px 0px rgb(0 0 0 / 8%);
+  border-radius: 0.3333333333333333em;
+  margin: 1rem auto 0;
+}
+
+.form h3 {
+  font-weight: 700;
+  font-size: 23px;
+}
+
+.form-control {
+  margin: 20px 0;
+}
+
+.btn-checkout {
+  width: 90%;
+}
+
+.form-checkout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cartE {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 0.3333333333333333em;
+  margin: 20px 0;
+}
+
+@media (max-width: 700px) {
+  .form {
+    width: 100%;
+  }
+}

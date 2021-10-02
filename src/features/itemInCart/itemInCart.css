@@ -135,6 +135,10 @@
   text-transform: lowercase;
 }
 
+.gray {
+  color: gray;
+}
+
 @media (max-width: 1000px) {
   .info-cart {
     flex-direction: column;

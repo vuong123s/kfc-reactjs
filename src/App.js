@@ -6,7 +6,7 @@ import Login from './features/login/Login';
 import End from './features/end/End.js';
 import PageSignIn from './page/pageSignIn/PageSignIn.js';
 import PageCart from './page/pageCart/PageCart';
-import AddedCart from './features/addedCart/AddedCart';
+import Checkout from './page/Checkout/Checkout';
 import {
   Switch,
   Route,
@@ -19,7 +19,6 @@ import ItemPage from './page/itemPage/ItemPage';
 import axios from 'axios';
 import { BiChevronUpCircle } from 'react-icons/bi';
 import ErrPage from './page/errPage/ErrPage';
-
 function App() {
   const [data, setData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -77,9 +76,9 @@ function App() {
               <Redirect to="/combo-1-nguoi" exact></Redirect>
             </Route>
             <Route path="/sign-in" exact component={PageSignIn} />
-
+            <Route path="/checkout" component={Checkout} />
             <Route path="/cart" exact component={PageCart} />
-            <Route path="/:itemPage/:id" exact component={ItemPage} />
+            <Route path="/:id" exact component={ItemPage} />
             <Route component={ErrPage} />
           </Switch>
           <Login></Login>

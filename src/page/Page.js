@@ -23,7 +23,7 @@ function Page() {
   useEffect(() => {
     let b = location.pathname.split('-').join('');
     c = b.substring(1);
-    setDataProducts(products[c]);
+    setDataProducts(products.filter((x) => x.type === c));
     setType(location.pathname.split('-').join(' ').substring(1).toUpperCase());
   }, [count]);
 

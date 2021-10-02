@@ -13,16 +13,11 @@ export default function ItemPage() {
   const value = useContext(MyContext);
   const { products, addToCart } = value;
 
-  const { itemPage, id } = match.params;
-  let dataItem;
-  if (
-    products[itemPage.split('-').join('')] === undefined ||
-    isNaN(Number(id)) === true
-  ) {
-    dataItem = 0;
-  } else {
-    dataItem = products[itemPage.split('-').join('')][id - 1];
-  }
+  const { id } = match.params;
+  let dataItem = products.find((x) => {
+    return x.id == id;
+  });
+  if (dataItem === undefined) dataItem = 0;
   const [total, setTotal] = useState(1);
   const [num, setNum] = useState(0);
   const [numItem, setNumItem] = useState(0);
@@ -43,12 +38,15 @@ export default function ItemPage() {
   const pluses = () => {
     setNumItem(numItem + 1);
   };
+
   const minuses = () => {
     if (numItem > 0) setNumItem(numItem - 1);
   };
+
   const plusTotal = () => {
     setTotal(total + 1);
   };
+
   const minusTotal = () => {
     if (total > 1) setTotal(total - 1);
   };
@@ -57,7 +55,7 @@ export default function ItemPage() {
     text.forEach((e, i) => {
       document.getElementById(`${i}0`).checked = true;
     });
-  }, []);
+  }, [text]);
 
   if (dataItem === 0) return <ErrPage></ErrPage>;
 
@@ -91,7 +89,7 @@ export default function ItemPage() {
                               value={item}
                               name={`${index}`}
                             />
-                             
+
                             <label id={`${index}${i}`} for={`${index}${i}`}>
                               Có sẵn
                             </label>
@@ -117,7 +115,7 @@ export default function ItemPage() {
                             name={`${index}`}
                             value={item}
                           />
-                           
+
                           <label id={`${index}${i}`} for={`${index}${i}`}>
                             {item}
                           </label>
@@ -207,6 +205,7 @@ export default function ItemPage() {
                   price: dataItem.price,
                   text: text,
                   quantity: total,
+                  id,
                 },
               ];
               if (num > 0)
@@ -214,12 +213,14 @@ export default function ItemPage() {
                   name: 'Bánh trứng',
                   price: 25000,
                   quantity: num,
+                  id,
                 });
               if (numItem > 0)
                 pushItem.push({
                   name: '1 khoai tay chien & 1 lon pepsi',
                   price: 50000,
                   quantity: numItem,
+                  id,
                 });
               addToCart(pushItem);
             }}

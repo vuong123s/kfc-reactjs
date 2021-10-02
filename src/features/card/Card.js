@@ -53,7 +53,7 @@ function Card(props) {
             <img src={A} />
           </div>
           <div className="all-button">
-            <Link to={`${pathname}/${id}`} className="button">
+            <Link to={`${id}`} className="button">
               CUSTOMIZE
             </Link>
             <div

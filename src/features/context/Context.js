@@ -38,7 +38,6 @@ function Context(props) {
         if (Object.keys(data).length > 3) {
           setIsLogined(true);
           localStorage.setItem('token', data.token);
-          localStorage.setItem('user', JSON.stringify(data));
           setDisplay(false);
         } else {
           setCheckLogin(data.message);
@@ -118,6 +117,7 @@ function Context(props) {
         setIsAdded,
         data,
         setData,
+        setDisplay,
       }}
     >
       {props.children}
